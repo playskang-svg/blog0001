@@ -1,37 +1,29 @@
 ---
-title: "About"
-description: "A bit about me and this blog."
+title: "블로그팁스 운영 안내"
+description: "교통 문제 해결부터 숙박 거점 선택까지 이어지는 블로그팁스의 정보 확인 및 제휴 운영 원칙입니다."
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+블로그팁스는 일본 소도시 여행에서 자주 막히는 **공항·역·항구 이동 문제**를 해결하고, 다음 일정에 알맞은 숙박 거점을 고를 수 있도록 돕는 여행 정보 사이트입니다.
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+## 정보를 만드는 기준
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+- 교통 시간표, 운임, 승차 위치와 시설 정보는 운영기관의 공식 자료를 먼저 확인합니다.
+- 글에는 가능한 경우 정보 확인일을 표시하며, 변동 가능성이 큰 내용은 출발 전에 공식 페이지에서 다시 확인하도록 안내합니다.
+- 직접 이용하지 않은 숙소나 교통편을 이용한 것처럼 표현하지 않습니다.
+- 여행자의 도착 시각, 짐, 동행자, 환승 횟수와 다음 날 이동을 기준으로 대안을 비교합니다.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+## 숙소를 추천하는 기준
 
-## Features
+호텔, 게스트하우스, 에어비앤비와 같은 단기임대 숙소를 단순 인기순으로 나열하지 않습니다. 역·정류장·항구까지의 이동, 계단과 도보 부담, 짐 보관, 식사와 다음 날 출발 동선을 먼저 설명합니다.
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+실제 예약 링크가 없는 숙소는 임의의 판매처로 연결하지 않습니다. 상품명, 위치, 객실 조건과 발급된 링크가 정확하게 일치하는지 확인된 경우에만 예약 버튼을 표시합니다.
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+## 제휴 관계 안내
 
-and so much more.
+일부 글에는 제휴 링크가 포함될 수 있습니다. 해당 링크를 통해 예약이나 구매가 이루어지면 블로그팁스가 수수료를 받을 수 있으며, 독자가 부담하는 가격은 달라지지 않습니다. 제휴 링크가 있는 글과 추천 영역에는 이를 분명하게 표시합니다.
 
-## Show your support
+블로그팁스는 예약과 결제를 직접 처리하지 않습니다. 가격, 재고, 취소와 환불 조건은 최종 판매처 화면을 기준으로 확인해야 합니다.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+## 여행할인백과 연결
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+교통과 숙박 권역을 결정한 뒤 확인할 수 있는 여행 혜택은 [여행할인백과](https://travelpromotion.tipspedia.kr/)와 연결할 수 있습니다. 현재 지역과 일치하는 혜택이 없으면 무관한 할인 페이지를 억지로 노출하지 않습니다.

@@ -34,8 +34,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["ko"],
+    defaultLocale: "ko",
     routing: {
       prefixDefaultLocale: false,
     },

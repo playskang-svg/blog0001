@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "build": "npm run content:validate && astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "content:validate": "node scripts/validate-content.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",

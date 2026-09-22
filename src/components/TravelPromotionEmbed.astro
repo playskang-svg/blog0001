@@ -1,0 +1,79 @@
+---
+import { resolvePlacement } from "@/data/affiliate-catalog";
+
+type Props = {
+  placementKey?: string;
+  variant?: "card" | "embed";
+  context?: string;
+};
+
+const {
+  placementKey = "japan-promotion-general",
+  variant = "card",
+  context,
+} = Astro.props;
+
+const resolved = resolvePlacement(placementKey);
+const offerUrl = resolved?.offer?.url;
+const canEmbed = Boolean(
+  offerUrl && new URL(offerUrl).hostname === "travelpromotion.tipspedia.kr"
+);
+
+if (!resolved && import.meta.env.DEV) {
+  console.warn(`[TravelPromotionEmbed] Unknown placement: ${placementKey}`);
+}
+---
+
+{
+  resolved && (
+    <aside class="not-prose my-10 overflow-hidden rounded-2xl border border-border bg-muted/25">
+      <div class="p-5 sm:p-6">
+        <p class="text-accent mb-2 text-sm font-semibold tracking-wide">
+          {resolved.placement.eyebrow}
+        </p>
+        <h2 class="text-foreground text-xl font-bold sm:text-2xl">
+          {resolved.placement.title}
+        </h2>
+        <p class="text-muted-foreground mt-3 leading-7">
+          {context ?? resolved.placement.description}
+        </p>
+      </div>
+
+      {variant === "embed" && canEmbed && offerUrl && (
+        <div class="border-border border-y bg-background p-2 sm:p-4">
+          <iframe
+            src={offerUrl}
+            title="여행할인백과 일본 여행 혜택"
+            loading="lazy"
+            class="h-[32rem] w-full rounded-xl border-0 bg-background"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
+            referrerpolicy="strict-origin-when-cross-origin"
+          />
+        </div>
+      )}
+
+      <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-4 sm:px-6">
+        <span class="text-muted-foreground text-sm">
+          {resolved.product.locationNote}
+        </span>
+        {offerUrl && (
+          <a
+            href={offerUrl}
+            target="_blank"
+            rel={
+              resolved.offer?.commissioned
+                ? "sponsored noopener noreferrer"
+                : "noopener noreferrer"
+            }
+            class="bg-accent text-accent-foreground inline-flex min-h-11 items-center rounded-full px-5 py-2.5 font-semibold no-underline transition-opacity hover:opacity-90"
+          >
+            {resolved.placement.ctaLabel}
+            <span aria-hidden="true" class="ms-1">
+              ↗
+            </span>
+          </a>
+        )}
+      </div>
+    </aside>
+  )
+}

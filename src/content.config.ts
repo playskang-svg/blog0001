@@ -2,8 +2,9 @@ import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 import config from "@/config";
+import { CATEGORY_SLUGS } from "@/data/categories";
 
-export const BLOG_PATH = "src/content/posts";
+export const BLOG_PATH = "src/content/posts/published";
 
 const posts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
@@ -15,6 +16,13 @@ const posts = defineCollection({
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
+      category: z.enum(CATEGORY_SLUGS),
+      region: z.string(),
+      transportModes: z.array(z.string()).default([]),
+      travelerTypes: z.array(z.string()).default([]),
+      decision: z.string(),
+      sourceCheckedAt: z.date().optional().nullable(),
+      affiliatePlacements: z.array(z.string()).default([]),
       tags: z.array(z.string()).default(["others"]),
       ogImage: image().or(z.string()).optional(),
       description: z.string(),

@@ -2,14 +2,15 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
-    title: "AstroPaper",
-    description: "A minimal, responsive and SEO-friendly Astro blog theme.",
-    author: "Sat Naing",
-    profile: "https://satna.ing",
-    ogImage: "default-og.jpg",
-    lang: "en",
-    timezone: "Asia/Bangkok",
+    url: "https://blog.tipspedia.kr/",
+    title: "블로그팁스",
+    description:
+      "교통부터 숙박 거점까지 이어지는 일본 소도시 실전 여행 팁을 전합니다.",
+    author: "블로그팁스 편집팀",
+    profile: "https://blog.tipspedia.kr/about/",
+    ogImage: "default-og.webp",
+    lang: "ko",
+    timezone: "Asia/Seoul",
     dir: "ltr",
   },
   posts: {
@@ -23,23 +24,17 @@ export default defineAstroPaperConfig({
     showArchives: true,
     showBackButton: true,
     editPost: {
-      enabled: true,
-      url: "https://github.com/satnaing/astro-paper/edit/main/",
+      enabled: false,
     },
     search: "pagefind",
   },
-  socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
-  ],
+  socials: [],
   shareLinks: [
-    { name: "whatsapp", url: "https://wa.me/?text=" },
     { name: "facebook", url: "https://www.facebook.com/sharer.php?u=" },
-    { name: "x",        url: "https://x.com/intent/post?url=" },
-    { name: "telegram", url: "https://t.me/share/url?url=" },
-    { name: "pinterest", url: "https://pinterest.com/pin/create/button/?url=" },
-    { name: "mail",     url: "mailto:?subject=See%20this%20post&body=" },
+    { name: "x", url: "https://x.com/intent/post?url=" },
+    {
+      name: "mail",
+      url: "mailto:?subject=%EC%97%AC%ED%96%89%20%EA%B0%80%EC%9D%B4%EB%93%9C%20%EA%B3%B5%EC%9C%A0&body=",
+    },
   ],
 });

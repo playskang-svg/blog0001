@@ -67,8 +67,8 @@ const t = useTranslations(locale);
       if (import.meta.env.DEV) {
         pageFindSearch.innerHTML = `
             <div class="bg-muted/75 rounded p-4 space-y-4 mb-4">
-              <p><strong>DEV mode Warning! </strong>You need to build the project at least once to see the search results during development.</p>
-              <code class="block bg-black text-white px-2 py-1 rounded">pnpm run build</code>
+              <p><strong>개발 화면 안내: </strong>검색 결과를 보려면 프로젝트를 한 번 빌드해야 합니다.</p>
+              <code class="block bg-black text-white px-2 py-1 rounded">npm run build</code>
             </div>
           `;
       }
@@ -79,6 +79,33 @@ const t = useTranslations(locale);
         bundlePath,
         showImages: false,
         showSubResults: true,
+        translations: {
+          placeholder: "여행 가이드 검색",
+          clear_search: "지우기",
+          load_more: "검색 결과 더 보기",
+          search_label: "블로그팁스 검색",
+          filters_label: "검색 조건",
+          zero_results: "[SEARCH_TERM] 검색 결과가 없습니다.",
+          many_results: "[SEARCH_TERM] 검색 결과 [COUNT]개",
+          one_result: "[SEARCH_TERM] 검색 결과 [COUNT]개",
+          total_zero_results: "검색 결과가 없습니다.",
+          total_one_result: "검색 결과 [COUNT]개",
+          total_many_results: "검색 결과 [COUNT]개",
+          alt_search: "[SEARCH_TERM] 결과가 없어 [DIFFERENT_TERM] 결과를 표시합니다.",
+          search_suggestion: "[SEARCH_TERM] 결과가 없습니다. 다음 검색어를 이용해 보세요.",
+          searching: "[SEARCH_TERM] 검색 중…",
+          results_label: "검색 결과",
+          keyboard_navigate: "이동",
+          keyboard_select: "선택",
+          keyboard_clear: "지우기",
+          keyboard_close: "닫기",
+          keyboard_search: "검색",
+          error_search: "검색 중 오류가 발생했습니다.",
+          filter_selected_one: "[COUNT]개 선택",
+          filter_selected_many: "[COUNT]개 선택",
+          input_hint: "검색어를 입력하면 결과가 표시됩니다.",
+          loading: "불러오는 중",
+        },
         processTerm: function (term: string) {
           params.set("q", term); // Update the `q` parameter in the URL
           history.replaceState(history.state, "", "?" + params.toString()); // Push the new URL without reloading

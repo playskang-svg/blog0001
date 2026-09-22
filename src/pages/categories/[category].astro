@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Card from "@/components/Card.astro";
+import Footer from "@/components/Footer.astro";
+import { categoryList, type CategoryDefinition } from "@/data/categories";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import config from "@/config";
+
+export async function getStaticPaths() {
+  return categoryList.map(category => ({
+    params: { category: category.slug },
+    props: { category },
+  }));
+}
+
+type Props = { category: CategoryDefinition };
+const { category } = Astro.props;
+const posts = getSortedPosts(
+  await getCollection("posts", ({ data }) => data.category === category.slug)
+);
+---
+
+<Layout
+  title={`${category.name} | ${config.site.title}`}
+  description={category.description}
+>
+  <Header />
+  <Breadcrumb />
+  <Main pageTitle={category.name} pageDesc={category.description}>
+    <section class="border-border bg-muted/25 mb-8 rounded-2xl border p-5">
+      <p class="text-muted-foreground text-sm font-semibold">이 카테고리가 답하는 질문</p>
+      <p class="mt-2 text-lg leading-8 font-medium">{category.question}</p>
+      <p class="text-muted-foreground mt-3 leading-7">
+        다음 결정: {category.nextDecision}
+      </p>
+      <p class="mt-3 text-sm font-semibold">
+        우선 지역: {category.launchRegions.join(" · ")}
+      </p>
+    </section>
+
+    {
+      posts.length > 0 ? (
+        <ul>{posts.map(post => <Card {...post} />)}</ul>
+      ) : (
+        <div class="border-border rounded-xl border border-dashed p-5">
+          <p class="font-semibold">공식 자료를 확인한 첫 가이드를 준비 중입니다.</p>
+          <p class="text-muted-foreground mt-2 leading-7">
+            교통 시간표와 숙소 위치가 검증되기 전에는 빈 추천 링크를 노출하지 않습니다.
+          </p>
+        </div>
+      )
+    }
+  </Main>
+  <Footer />
+</Layout>
