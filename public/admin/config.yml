@@ -23,7 +23,11 @@ collections:
       - label: "파일명(슬러그, 영문 소문자-하이픈만)"
         name: "slug"
         widget: "string"
-        pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "영문 소문자와 하이픈만 사용하세요 (예: matsuyama-airport-to-dogo)"]
+        pattern:
+          [
+            "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "영문 소문자와 하이픈만 사용하세요 (예: matsuyama-airport-to-dogo)",
+          ]
       - label: "제목"
         name: "title"
         widget: "string"
@@ -87,7 +91,10 @@ collections:
         required: false
         default: []
         options:
-          - { label: "일본 여행 프로모션 (공통)", value: "japan-promotion-general" }
+          - {
+              label: "일본 여행 프로모션 (공통)",
+              value: "japan-promotion-general",
+            }
       - label: "태그"
         name: "tags"
         widget: "list"
