@@ -14,8 +14,8 @@ const config: ResolvedAstroPaperConfig = {
   site: {
     ...userConfig.site,
     ogImage: userConfig.site.ogImage ?? DEFAULT_OG_IMAGE,
-    lang: userConfig.site.lang ?? "en",
-    timezone: userConfig.site.timezone ?? "UTC",
+    lang: userConfig.site.lang ?? "ko",
+    timezone: userConfig.site.timezone ?? "Asia/Seoul",
     dir: userConfig.site.dir ?? "ltr",
     googleVerification:
       userConfig.site.googleVerification || PUBLIC_GOOGLE_SITE_VERIFICATION,
