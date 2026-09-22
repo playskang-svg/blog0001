@@ -19,8 +19,13 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 
+import { passthroughImageService } from "astro/config";
+
 export default defineConfig({
   site: config.site.url,
+  image: {
+    service: passthroughImageService(),
+  },
   integrations: [
     mdx(),
     sitemap({
