@@ -1,0 +1,46 @@
+name: Auto-convert images to WebP
+
+# Decap CMS나 수동 커밋으로 jpg/png 등이 올라오면 자동으로 webp로 바꾸고
+# 글 파일의 참조 경로도 고쳐서 main에 다시 커밋한다.
+# 변환할 게 없으면 아무 것도 하지 않고 조용히 끝난다 (무한루프 방지).
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/assets/images/posts/**"
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: "sharp 설치 (임시, package.json에는 안 남김)"
+        run: npm install --no-save sharp
+
+      - name: "이미지 webp 변환 + 참조 경로 수정"
+        run: node scripts/convert-images-to-webp.mjs
+
+      - name: "변경사항 커밋"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "변환할 이미지 없음, 커밋 생략"
+          else
+            git commit -m "chore: auto-convert images to webp"
+            git push
+          fi
