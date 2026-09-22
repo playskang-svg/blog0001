@@ -27,12 +27,17 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout my-1"
   >
     <section class="border-border border-b py-12 sm:py-16">
-      <p class="text-accent mb-3 text-sm font-bold tracking-[0.16em]">블로그팁스 · 일본 소도시 여행</p>
-      <h1 class="max-w-2xl text-4xl leading-tight font-bold tracking-tight sm:text-5xl">
+      <p class="text-accent mb-3 text-sm font-bold tracking-[0.16em]">
+        블로그팁스 · 일본 소도시 여행
+      </p>
+      <h1
+        class="max-w-2xl text-4xl leading-tight font-bold tracking-tight sm:text-5xl"
+      >
         이동이 어려운 여행지일수록<br class="hidden sm:block" /> 숙소 위치가 중요합니다
       </h1>
       <p class="text-muted-foreground mt-5 max-w-2xl text-lg leading-8">
-        공항·역·항구에서 막히는 이동 문제를 먼저 풀고, 관광지와 다음 교통편에 맞는 숙박 거점을 함께 찾습니다.
+        공항·역·항구에서 막히는 이동 문제를 먼저 풀고, 관광지와 다음 교통편에
+        맞는 숙박 거점을 함께 찾습니다.
       </p>
       <div class="mt-7 flex flex-wrap gap-3">
         <LinkButton
@@ -54,18 +59,24 @@ const homePath = getRelativeLocaleUrl(locale, "");
     <section class="py-12">
       <div class="mb-6">
         <p class="text-accent text-sm font-semibold">여행 문제별 탐색</p>
-        <h2 class="mt-1 text-2xl font-bold sm:text-3xl">어디서 이동이 막히셨나요?</h2>
+        <h2 class="mt-1 text-2xl font-bold sm:text-3xl">
+          어디서 이동이 막히셨나요?
+        </h2>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
         {
           categoryList.map(category => (
             <a
               href={`/categories/${category.slug}/`}
-              class="border-border group rounded-2xl border p-5 no-underline transition hover:-translate-y-0.5 hover:border-accent"
+              class="border-border group hover:border-accent rounded-2xl border p-5 no-underline transition hover:-translate-y-0.5"
             >
               <div class="flex items-start justify-between gap-3">
-                <h3 class="text-foreground text-xl font-bold">{category.name}</h3>
-                <span class="text-accent" aria-hidden="true">→</span>
+                <h3 class="text-foreground text-xl font-bold">
+                  {category.name}
+                </h3>
+                <span class="text-accent" aria-hidden="true">
+                  →
+                </span>
               </div>
               <p class="text-muted-foreground mt-3 leading-7">
                 {category.shortDescription}
@@ -82,17 +93,23 @@ const homePath = getRelativeLocaleUrl(locale, "");
     <section class="border-border border-y py-10">
       <h2 class="text-2xl font-bold">블로그팁스가 연결하는 순서</h2>
       <ol class="mt-6 grid gap-4 sm:grid-cols-3">
-        <li class="rounded-xl bg-muted/30 p-5">
+        <li class="bg-muted/30 rounded-xl p-5">
           <strong class="text-accent block text-sm">01 교통 해결</strong>
-          <span class="mt-2 block leading-7">시간표, 환승, 막차와 짐 이동 조건을 확인합니다.</span>
+          <span class="mt-2 block leading-7"
+            >시간표, 환승, 막차와 짐 이동 조건을 확인합니다.</span
+          >
         </li>
-        <li class="rounded-xl bg-muted/30 p-5">
+        <li class="bg-muted/30 rounded-xl p-5">
           <strong class="text-accent block text-sm">02 숙박 거점 결정</strong>
-          <span class="mt-2 block leading-7">호텔·게스트하우스·단기임대 중 동선에 맞는 유형을 고릅니다.</span>
+          <span class="mt-2 block leading-7"
+            >호텔·게스트하우스·단기임대 중 동선에 맞는 유형을 고릅니다.</span
+          >
         </li>
-        <li class="rounded-xl bg-muted/30 p-5">
+        <li class="bg-muted/30 rounded-xl p-5">
           <strong class="text-accent block text-sm">03 혜택 확인</strong>
-          <span class="mt-2 block leading-7">결정이 끝난 뒤 관련 프로모션과 검증된 예약 링크를 확인합니다.</span>
+          <span class="mt-2 block leading-7"
+            >결정이 끝난 뒤 관련 프로모션과 검증된 예약 링크를 확인합니다.</span
+          >
         </li>
       </ol>
     </section>
@@ -102,25 +119,32 @@ const homePath = getRelativeLocaleUrl(locale, "");
       {
         recentPosts.length > 0 ? (
           <ul class="mt-4">
-            {recentPosts.map(post => <Card variant="h3" {...post} />)}
+            {recentPosts.map(post => (
+              <Card variant="h3" {...post} />
+            ))}
           </ul>
         ) : (
           <div class="border-border mt-5 rounded-2xl border border-dashed p-6">
-            <p class="font-semibold">첫 소도시 교통 가이드를 준비하고 있습니다.</p>
+            <p class="font-semibold">
+              첫 소도시 교통 가이드를 준비하고 있습니다.
+            </p>
             <p class="text-muted-foreground mt-2 leading-7">
-              확인되지 않은 시간표와 숙소 링크는 먼저 노출하지 않습니다. 공식 자료 검증이 끝난 글부터 순서대로 발행합니다.
+              확인되지 않은 시간표와 숙소 링크는 먼저 노출하지 않습니다. 공식
+              자료 검증이 끝난 글부터 순서대로 발행합니다.
             </p>
           </div>
         )
       }
-      {sortedPosts.length > config.posts.perIndex && (
-        <div class="mt-8 text-center">
-          <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
-            전체 가이드 보기
-            <IconArrowRight class="inline-block" />
-          </LinkButton>
-        </div>
-      )}
+      {
+        sortedPosts.length > config.posts.perIndex && (
+          <div class="mt-8 text-center">
+            <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
+              전체 가이드 보기
+              <IconArrowRight class="inline-block" />
+            </LinkButton>
+          </div>
+        )
+      }
     </section>
   </main>
   <Footer />

@@ -1,8 +1,5 @@
 ---
-import {
-  resolvePlacement,
-  type ProductKind,
-} from "@/data/affiliate-catalog";
+import { resolvePlacement, type ProductKind } from "@/data/affiliate-catalog";
 
 type Props = {
   placementKeys: string[];
@@ -23,13 +20,7 @@ const resolvedItems = placementKeys
   .map(resolvePlacement)
   .filter(item => item && stayKinds.includes(item.product.kind));
 
-const missingKeys = placementKeys.filter(key => !resolvePlacement(key));
-
-if (missingKeys.length && import.meta.env.DEV) {
-  console.warn(
-    `[StayRecommendations] Unknown placements: ${missingKeys.join(", ")}`
-  );
-}
+// 등록되지 않은 키는 링크를 추측하지 않고 표시 대상에서 제외합니다.
 ---
 
 {
@@ -43,7 +34,8 @@ if (missingKeys.length && import.meta.env.DEV) {
 
       {resolvedItems.some(item => item?.offer?.commissioned) && (
         <p class="border-border bg-muted/30 text-foreground mb-4 rounded-lg border px-4 py-3 text-sm leading-6">
-          이 영역에는 제휴 링크가 포함되어 있으며, 예약이 이루어지면 팁스피디아가 수수료를 받을 수 있습니다.
+          이 영역에는 제휴 링크가 포함되어 있으며, 예약이 이루어지면
+          팁스피디아가 수수료를 받을 수 있습니다.
         </p>
       )}
 
@@ -52,7 +44,9 @@ if (missingKeys.length && import.meta.env.DEV) {
           item =>
             item && (
               <article class="border-border rounded-2xl border p-5">
-                <p class="text-muted-foreground text-sm">{item.product.region}</p>
+                <p class="text-muted-foreground text-sm">
+                  {item.product.region}
+                </p>
                 <h3 class="text-foreground mt-1 text-lg font-bold">
                   {item.product.name}
                 </h3>

@@ -12,7 +12,7 @@ for (const [path, mod] of Object.entries(modules)) {
   translations[locale] = mod.default;
 }
 
-/** Returns UI strings for the given locale, falling back to English. */
+/** 요청한 번역이 없을 때 한국어를 기본값으로 사용합니다. */
 export function useTranslations(locale: string = "ko"): UIStrings {
-  return translations[locale] ?? translations["ko"] ?? translations["en"];
+  return translations[locale] ?? translations["ko"];
 }

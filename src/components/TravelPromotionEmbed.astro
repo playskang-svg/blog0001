@@ -19,14 +19,12 @@ const canEmbed = Boolean(
   offerUrl && new URL(offerUrl).hostname === "travelpromotion.tipspedia.kr"
 );
 
-if (!resolved && import.meta.env.DEV) {
-  console.warn(`[TravelPromotionEmbed] Unknown placement: ${placementKey}`);
-}
+// 등록되지 않은 키는 링크를 추측하지 않고 표시하지 않습니다.
 ---
 
 {
   resolved && (
-    <aside class="not-prose my-10 overflow-hidden rounded-2xl border border-border bg-muted/25">
+    <aside class="not-prose border-border bg-muted/25 my-10 overflow-hidden rounded-2xl border">
       <div class="p-5 sm:p-6">
         <p class="text-accent mb-2 text-sm font-semibold tracking-wide">
           {resolved.placement.eyebrow}
@@ -40,12 +38,12 @@ if (!resolved && import.meta.env.DEV) {
       </div>
 
       {variant === "embed" && canEmbed && offerUrl && (
-        <div class="border-border border-y bg-background p-2 sm:p-4">
+        <div class="border-border bg-background border-y p-2 sm:p-4">
           <iframe
             src={offerUrl}
             title="여행할인백과 일본 여행 혜택"
             loading="lazy"
-            class="h-[32rem] w-full rounded-xl border-0 bg-background"
+            class="bg-background h-[32rem] w-full rounded-xl border-0"
             sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
             referrerpolicy="strict-origin-when-cross-origin"
           />

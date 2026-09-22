@@ -32,7 +32,9 @@ const posts = getSortedPosts(
   <Breadcrumb />
   <Main pageTitle={category.name} pageDesc={category.description}>
     <section class="border-border bg-muted/25 mb-8 rounded-2xl border p-5">
-      <p class="text-muted-foreground text-sm font-semibold">이 카테고리가 답하는 질문</p>
+      <p class="text-muted-foreground text-sm font-semibold">
+        이 카테고리가 답하는 질문
+      </p>
       <p class="mt-2 text-lg leading-8 font-medium">{category.question}</p>
       <p class="text-muted-foreground mt-3 leading-7">
         다음 결정: {category.nextDecision}
@@ -44,12 +46,19 @@ const posts = getSortedPosts(
 
     {
       posts.length > 0 ? (
-        <ul>{posts.map(post => <Card {...post} />)}</ul>
+        <ul>
+          {posts.map(post => (
+            <Card {...post} />
+          ))}
+        </ul>
       ) : (
         <div class="border-border rounded-xl border border-dashed p-5">
-          <p class="font-semibold">공식 자료를 확인한 첫 가이드를 준비 중입니다.</p>
+          <p class="font-semibold">
+            공식 자료를 확인한 첫 가이드를 준비 중입니다.
+          </p>
           <p class="text-muted-foreground mt-2 leading-7">
-            교통 시간표와 숙소 위치가 검증되기 전에는 빈 추천 링크를 노출하지 않습니다.
+            교통 시간표와 숙소 위치가 검증되기 전에는 빈 추천 링크를 노출하지
+            않습니다.
           </p>
         </div>
       )

@@ -1,8 +1,5 @@
 export type ProductKind =
-  | "promotion-hub"
-  | "hotel"
-  | "guesthouse"
-  | "vacation-rental";
+  "promotion-hub" | "hotel" | "guesthouse" | "vacation-rental";
 
 export type Product = {
   productKey: string;
@@ -42,7 +39,8 @@ export const products: Record<string, Product> = {
     kind: "promotion-hub",
     region: "일본",
     locationNote: "도쿄·오사카·후쿠오카 중심의 일본 여행 할인 정보",
-    decisionReason: "교통과 숙박 권역을 정한 뒤 이용 가능한 여행 혜택을 확인할 때 연결",
+    decisionReason:
+      "교통과 숙박 권역을 정한 뒤 이용 가능한 여행 혜택을 확인할 때 연결",
   },
 };
 

@@ -46,7 +46,8 @@ export default {
     tagsDesc: "도시, 교통수단, 동행 조건으로 필요한 글을 찾으세요.",
 
     categoriesTitle: "교통 문제별 카테고리",
-    categoriesDesc: "도착부터 숙소까지 실제로 막히는 지점을 기준으로 정리했습니다.",
+    categoriesDesc:
+      "도착부터 숙소까지 실제로 막히는 지점을 기준으로 정리했습니다.",
     categoryTitle: "카테고리",
 
     postsTitle: "전체 여행 가이드",

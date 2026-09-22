@@ -24,11 +24,13 @@ const t = useTranslations(locale);
         categoryList.map(category => (
           <a
             href={`/categories/${category.slug}/`}
-            class="border-border rounded-2xl border p-5 no-underline transition hover:border-accent"
+            class="border-border hover:border-accent rounded-2xl border p-5 no-underline transition"
           >
             <div class="flex items-center justify-between gap-3">
               <h2 class="text-xl font-bold">{category.name}</h2>
-              <span class="text-accent" aria-hidden="true">→</span>
+              <span class="text-accent" aria-hidden="true">
+                →
+              </span>
             </div>
             <p class="text-muted-foreground mt-3 leading-7">
               {category.description}

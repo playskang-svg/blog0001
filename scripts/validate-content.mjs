@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 import { readdir, readFile } from "node:fs/promises";
 import { extname, join, relative } from "node:path";
