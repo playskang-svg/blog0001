@@ -5,7 +5,7 @@ backend:
   base_url: https://blog0001-decap-oauth.playskang.workers.dev
   auth_endpoint: auth
 
-publish_mode: editorial_workflow
+publish_mode: simple
 
 media_folder: "src/assets/images/posts/uploads"
 public_folder: "/uploads"
