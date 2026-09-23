@@ -1,3 +1,6 @@
+// data/affiliate-links.json은 `npm run sync:affiliate`가 생성한다 — 직접 고치지 않는다.
+import centralLinksData from "../../data/affiliate-links.json";
+
 export type ProductKind =
   "promotion-hub" | "hotel" | "guesthouse" | "vacation-rental";
 
@@ -18,6 +21,9 @@ export type Offer = {
   productKey: string;
   seller: string;
   affiliateNetwork?: AffiliateNetwork;
+  /** 이 URL을 직접 하드코딩하는 대신 쓸 때: 제휴링크 중앙 저장소(affiliatelink)의 link_key.
+   *  있으면 이 값으로 url을 대체해서 가져온다 (offerUrl 참고). */
+  centralKey?: string;
   url: string;
   status: "active" | "planned" | "expired";
   commissioned: boolean;
@@ -75,6 +81,36 @@ export function getActiveOffer(productKey: string) {
   return Object.values(offers).find(
     offer => offer.productKey === productKey && offer.status === "active"
   );
+}
+
+/**
+ * offer의 실제 URL. centralKey가 있으면 제휴링크 중앙 저장소(affiliatelink)의
+ * data/affiliate-links.json에서 조회하고, 없으면 offer.url을 그대로 쓴다.
+ * (오늘 등록된 offer는 전부 centralKey가 없다 — 새로 커미션 붙는 offer부터 centralKey로 옮긴다.)
+ */
+export function offerUrl(offer: Offer): string {
+  if (!offer.centralKey) return offer.url;
+  return getCentralLink(offer.centralKey).url;
+}
+
+type CentralLink = {
+  key: string;
+  url: string;
+  status: "active" | "collected" | "review" | "retired";
+  issue?: string;
+};
+
+const centralLinks = centralLinksData.links as CentralLink[];
+
+function getCentralLink(key: string): CentralLink {
+  const link = centralLinks.find(l => l.key === key);
+  if (!link) throw new Error(`[affiliate] unknown central link_key: ${key}`);
+  if (link.status === "retired") {
+    throw new Error(
+      `[affiliate] retired central link_key: ${key} (${link.issue ?? "사용 중단"})`
+    );
+  }
+  return link;
 }
 
 export function resolvePlacement(placementKey: string) {
