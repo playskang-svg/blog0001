@@ -122,6 +122,16 @@ src/assets/images/posts/{category}/{post-slug}/
 
 에어비앤비 등 서비스별 제휴 제공 여부와 딥링크 정책은 가입 계정의 현재 공식 조건을 확인한 뒤 연결한다.
 
+## 숙소별 딥링크는 나중에 개별 등록한다
+
+쿠팡파트너스·익스피디아 딥링크는 숙소·장소마다 새로 발급해야 하는 경우가 많다. 딥링크를 기다리느라 글 발행을 미루지 않고, 다음 순서로 점진적으로 붙여나간다.
+
+1. 글에 등장하는 숙소마다 `products`에 안정적인 `productKey`를 먼저 만든다.
+2. `offers`에 같은 `productKey`로 `status: "planned"`, `commissioned: false`인 항목을 등록한다 (URL은 임시값이거나 비워둔다). 이 상태에서는 `StayRecommendations`의 예약 버튼이 자동으로 숨는다 — 코드나 템플릿을 손댈 필요가 없다.
+3. 글은 그대로 발행한다. 정보 콘텐츠(시간표·환승·숙박 권역 판단)는 예약 링크 유무와 무관하게 가치가 있다.
+4. 실제 딥링크(쿠팡파트너스 API 발급본, 익스피디아 딥링크+프로모션 코드 등)가 나오면 해당 `offers` 항목만 갱신한다: `url`, `status: "active"`, `commissioned: true`, `affiliateNetwork`("coupang-partners" | "expedia" | "direct" | "other"), `checkedAt`. 페이지·템플릿 코드는 건드리지 않는다.
+5. 딥링크를 전달할 때는 `productKey + 실제 URL + (있으면) 프로모션 코드`만 알려주면 바로 등록해 반영한다. 만료 정책이 있는 딥링크는 만료 시점도 함께 알려준다.
+
 ## 글 발행 전 확인
 
 - 제목에 지역·교통 문제·결정이 드러나는가
