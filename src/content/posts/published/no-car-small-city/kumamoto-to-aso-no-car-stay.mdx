@@ -10,10 +10,21 @@ travelerTypes: ["아소산 방문 예정자", "대중교통 여행자", "렌터�
 decision: "당일 화산 규제 상태를 먼저 확인한 뒤, 직행버스와 특급열차+환승 중 하나를 고르고 당일치기와 1박 거점을 판단합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/no-car-small-city/kumamoto-to-aso-no-car-stay/hero.webp
 tags: ["아소산", "구마모토", "화산규제", "구사센리"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/no-car-small-city/kumamoto-to-aso-no-car-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="구름 사이로 햇살이 비치는 아소 칼데라의 굽이진 길"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 **아소산은 활화산입니다.** 이 글을 작성하는 시점(2026년 9월 23일) 기준으로, 기상청 공식 발표에 따르면 2026년 8월 14일 분화경계레벨이 3(입산규제)으로 상향됐다가 9월 1일 2(화구주변규제)로 낮아졌고, 9월 18일 발표에서도 레벨2가 유지되고 있습니다. 나카다케 제1화구에서 반경 약 1km는 여전히 낙석·화쇄류 경계 대상입니다. **다른 지역 글과 달리 이 글의 교통 정보만 보고 이동하지 말고, 출발 전 반드시 당일 규제 상황을 다시 확인하세요.**
 

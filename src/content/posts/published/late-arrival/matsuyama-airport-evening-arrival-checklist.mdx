@@ -10,8 +10,20 @@ travelerTypes: ["늦은 항공편 이용자", "온천 여행자"]
 decision: "공항 도착 즉시 남은 리무진버스 배차와 도고온천 체크인 시각을 비교해 온천까지 이동할지 시내에서 묵을지 판단합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/late-arrival/matsuyama-airport-evening-arrival-checklist/hero.webp
 tags: ["마쓰야마공항", "도고온천", "늦은 도착", "저녁 도착"]
 ---
+
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/late-arrival/matsuyama-airport-evening-arrival-checklist/hero.webp";
+
+<Image
+  src={hero}
+  alt="노을이 비치는 공항 터미널 대합실"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 이 글은 [마쓰야마공항→도고온천 접근 가이드](/posts/matsuyama-airport-to-dogo-stay-base/)의 요금·소요시간을 이미 확인했다는 전제로, **저녁 늦게 도착한 상황**에서 도고온천까지 갈지 시내에서 묵을지만 판단하는 체크리스트입니다.
 

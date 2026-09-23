@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
 import Datetime from "./Datetime.astro";
@@ -11,30 +12,53 @@ type Props = {
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, ...props } = data;
+const { title, description, ogImage, ...props } = data;
 const category = getCategory(data.category);
+const postUrl = getPostUrl(id, filePath, Astro.currentLocale);
+const thumbnail = typeof ogImage === "string" ? undefined : ogImage;
 ---
 
-<li class="my-6">
-  <div
-    class="text-muted-foreground mb-1 flex flex-wrap items-center gap-2 text-sm"
-  >
-    <span class="text-accent font-semibold">{category?.name}</span>
-    <span aria-hidden="true">·</span>
-    <span>{data.region}</span>
+<li class="my-6 flex gap-4">
+  {
+    thumbnail && (
+      <a
+        href={postUrl}
+        class="focus-outline block size-20 shrink-0 overflow-hidden rounded-xl sm:size-24"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <Image
+          src={thumbnail}
+          alt=""
+          width={192}
+          height={192}
+          class="size-full object-cover"
+          loading="lazy"
+        />
+      </a>
+    )
+  }
+  <div class="min-w-0 flex-1">
+    <div
+      class="text-muted-foreground mb-1 flex flex-wrap items-center gap-2 text-sm"
+    >
+      <span class="text-accent font-semibold">{category?.name}</span>
+      <span aria-hidden="true">·</span>
+      <span>{data.region}</span>
+    </div>
+    <a
+      href={postUrl}
+      class:list={[
+        "text-accent inline-block text-lg font-medium",
+        "decoration-dashed underline-offset-4 hover:underline",
+        "focus-visible:no-underline focus-visible:underline-offset-0",
+      ]}
+    >
+      <Heading transition:name={toTransitionName(id)}>
+        {title}
+      </Heading>
+    </a>
+    <Datetime {...props} />
+    <p>{description}</p>
   </div>
-  <a
-    href={getPostUrl(id, filePath, Astro.currentLocale)}
-    class:list={[
-      "text-accent inline-block text-lg font-medium",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
-    ]}
-  >
-    <Heading transition:name={toTransitionName(id)}>
-      {title}
-    </Heading>
-  </a>
-  <Datetime {...props} />
-  <p>{description}</p>
 </li>

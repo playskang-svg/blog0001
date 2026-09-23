@@ -10,10 +10,21 @@ travelerTypes: ["다카마쓰 초행자", "나오시마 방문 예정자", "대�
 decision: "다음 날 나오시마 등 섬 이동이 있는지, 저녁에 번화가를 즐기고 싶은지에 따라 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/stay-base/takamatsu-station-port-vs-kawaramachi-stay/hero.webp
 tags: ["다카마쓰", "가와라마치", "다카마쓰항", "숙소 위치"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/stay-base/takamatsu-station-port-vs-kawaramachi-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="간판과 조명이 늘어선 일본 상점가 거리"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 다카마쓰 여행 숙소는 크게 세 권역으로 나뉩니다. 공항 리무진버스가 정차하는 **다카마쓰역**과 **다카마쓰항**, 그리고 다카마쓰 최대 번화가인 **가와라마치**입니다. [공항 접근 글](/posts/takamatsu-airport-to-port-naoshima-stay/)에서 다룬 것처럼 다카마쓰역과 다카마쓰항은 운임이 같고 도보로도 이동 가능한 거리라, 가와라마치와 비교할 때는 **저녁 시간대 활동 계획**이 중요한 기준이 됩니다.
 

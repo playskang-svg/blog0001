@@ -10,10 +10,21 @@ travelerTypes: ["다카마쓰 초행자", "나오시마 방문 예정자", "대�
 decision: "다음 날 나오시마 페리를 탈지 시내 열차를 탈지에 따라 다카마쓰항과 다카마쓰역 중 하차 정류장과 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/airport-to-stay/takamatsu-airport-to-port-naoshima-stay/hero.webp
 tags: ["다카마쓰공항", "다카마쓰항", "나오시마", "공항버스"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/airport-to-stay/takamatsu-airport-to-port-naoshima-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="항구 마을 앞바다를 오가는 배 두 척"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 다카마쓰공항 리무진버스는 시내로 들어가는 길에 **다카마쓰역**과 **다카마쓰항(산포트 다카마쓰 여객터미널)**에 모두 정차합니다. 두 정류장 모두 운임이 같아서, 요금이 아니라 다음 날 일정(열차인지 나오시마행 페리인지)으로 하차 지점을 정하는 편이 더 중요합니다.
 

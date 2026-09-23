@@ -10,10 +10,21 @@ travelerTypes: ["기타큐슈 초행자", "대중교통 여행자", "야경·레
 decision: "다음 날 이동 계획과 야경·시모노세키 연계 일정 여부에 따라 고쿠라와 모지코 중 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/stay-base/kitakyushu-kokura-vs-mojiko-stay/hero.webp
 tags: ["기타큐슈", "고쿠라", "모지코", "숙소 위치"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/stay-base/kitakyushu-kokura-vs-mojiko-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="맑은 날 역 승강장에 정차한 초록색 열차"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 기타큐슈 여행 숙소는 크게 **고쿠라**와 **모지코** 두 권역으로 나뉩니다. [모지코~시모노세키 배편](/posts/mojiko-shimonoseki-ferry-stay/)에서 다룬 것처럼 두 지역은 성격이 다른 만큼, 다음 일정에 따라 유리한 쪽도 달라집니다.
 

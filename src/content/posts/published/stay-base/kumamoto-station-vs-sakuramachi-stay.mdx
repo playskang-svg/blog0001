@@ -10,10 +10,21 @@ travelerTypes: ["구마모토 초행자", "대중교통 여행자", "규슈 여�
 decision: "다음 날 신칸센 이동이 있는지, 구마모토성과 번화가 접근을 우선할지에 따라 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/stay-base/kumamoto-station-vs-sakuramachi-stay/hero.webp
 tags: ["구마모토", "사쿠라마치", "구마모토역", "숙소 위치"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/stay-base/kumamoto-station-vs-sakuramachi-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="나무 사이로 보이는 구마모토성 천수각"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 구마모토 여행 숙소는 신칸센이 서는 **구마모토역**과, 버스터미널·쇼핑몰·번화가가 모인 **사쿠라마치** 두 권역으로 나뉩니다. 두 곳은 성격이 뚜렷하게 달라서, 다음 일정과 구마모토성 접근 방식을 기준으로 정하면 명확합니다.
 

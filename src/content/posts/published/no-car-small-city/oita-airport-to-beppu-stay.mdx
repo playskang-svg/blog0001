@@ -10,10 +10,21 @@ travelerTypes: ["벳푸 온천 여행자", "대중교통 여행자", "렌터카 
 decision: "벳푸 시내 어느 정류장에 내리느냐에 따라 숙박 권역과 온천가까지의 이동 거리가 달라지므로 먼저 정류장을 정합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/no-car-small-city/oita-airport-to-beppu-stay/hero.webp
 tags: ["오이타공항", "벳푸", "에어라이너", "공항버스"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/no-car-small-city/oita-airport-to-beppu-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="벳푸 사카이강 다리와 시내버스 풍경"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 오이타공항에서 벳푸까지는 렌터카 없이도 **에어라이너 공항버스**로 바로 이동할 수 있습니다. 다만 벳푸 시내에는 정류장이 여러 곳 있어서, 숙소 이름보다 **어느 정류장에서 내려야 하는지**를 먼저 정하는 편이 헤매지 않습니다.
 

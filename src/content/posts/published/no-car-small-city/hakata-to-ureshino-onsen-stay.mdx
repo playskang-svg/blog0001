@@ -10,10 +10,21 @@ travelerTypes: ["우레시노온천 여행자", "대중교통 여행자", "렌�
 decision: "다케오온천역 환승 방식과 총 운임을 이해한 뒤, 우레시노온천역 주변 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/no-car-small-city/hakata-to-ureshino-onsen-stay/hero.webp
 tags: ["하카타역", "우레시노온천", "니시큐슈신칸센", "다케오온천"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/no-car-small-city/hakata-to-ureshino-onsen-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="규슈 신칸센 열차가 승강장에 들어오는 모습"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 하카타역에서 우레시노온천까지는 렌터카 없이도 **JR로 한 번 환승**해 이동할 수 있습니다. 재래선 특급 "릴레이가모메"를 타고 다케오온천역까지 간 뒤, 같은 승강장 맞은편에서 니시큐슈신칸센 "가모메"로 갈아타는 구조입니다. 개찰구를 나가지 않는 환승이라 절차는 단순하지만, 운임 계산 방식이 독특하므로 미리 알아두면 편합니다.
 

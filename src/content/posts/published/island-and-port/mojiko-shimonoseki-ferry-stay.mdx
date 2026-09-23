@@ -10,10 +10,21 @@ travelerTypes: ["기타큐슈·시모노세키 여행자", "대중교통 여행�
 decision: "관문연락선으로 모지코와 가라토를 오가는 동선을 기준으로 고쿠라와 모지코 중 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/island-and-port/mojiko-shimonoseki-ferry-stay/hero.webp
 tags: ["모지코", "시모노세키", "관문연락선", "가라토"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/island-and-port/mojiko-shimonoseki-ferry-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="모지코 항구의 표지판과 거리 풍경"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 모지코(기타큐슈)와 시모노세키 가라토는 **관문연락선**으로 단 5분이면 오갈 수 있습니다. 두 지역이 이렇게 가깝다 보니, 기타큐슈 여행 숙소를 고쿠라와 모지코 중 어디로 잡을지는 "다음 날 어디를 더 다닐 계획인지"로 결정하는 편이 명확합니다.
 
