@@ -80,10 +80,14 @@ src/assets/images/posts/{category}/{post-slug}/
 
 ### 5. 늦은 도착·이른 출발
 
-1. 기타큐슈공항 늦은 도착: 고쿠라행 막차와 공항 주변 숙박 판단
-2. 마쓰야마공항 저녁 도착: 도고온천까지 갈지 시내에서 잘지
-3. 나오시마 첫 배 타는 날: 다카마쓰항 도보권 숙소 선택
-4. 야쿠시마 배가 이른 날: 가고시마항 전날 숙소 체크리스트
+체크리스트 형식으로 작성한다. 이미 발행한 접근 가이드의 요금·시간표를 반복하지 않고, "그 순간 무엇을 확인하고 어떻게 판단할지"만 다뤄 카테고리 1·3 글과 중복되지 않게 한다.
+
+1. 기타큐슈공항 늦은 도착: 고쿠라행 막차와 공항 주변 숙박 판단 — 발행 완료 (`draft: false`, `kitakyushu-airport-late-arrival-checklist.mdx`)
+2. 마쓰야마공항 저녁 도착: 도고온천까지 갈지 시내에서 잘지 — 발행 완료 (`draft: false`, `matsuyama-airport-evening-arrival-checklist.mdx`)
+3. 나오시마 첫 배 타는 날: 다카마쓰항 도보권 숙소 선택 — 발행 완료 (`draft: false`, `naoshima-first-boat-day-checklist.mdx`)
+4. 야쿠시마 배가 이른 날: 가고시마항 전날 숙소 체크리스트 — 발행 완료 (`draft: false`, `yakushima-early-boat-checklist.mdx`)
+
+카테고리 5 완료. 전체 발행 대기열 20건 중 19건 발행, 1건(구마모토→아소산) 화산 규제 재확인 대기.
 
 ## 지역 우선순위 근거
 
