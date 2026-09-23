@@ -67,7 +67,7 @@ src/assets/images/posts/{category}/{post-slug}/
 ### 3. 섬·항구 환승
 
 1. 다카마쓰항에서 나오시마 가는 법: 첫 배 전날 어디에 묵을까 — 발행 완료 (`draft: false`, `takamatsu-port-to-naoshima-stay.mdx`; 페리·고속선 운임은 출처 간 표기가 달라 단일 금액을 단정하지 않음)
-2. 나오시마 여행 숙소는 섬 안과 다카마쓰항 중 어디가 좋을까
+2. 나오시마 여행 숙소는 섬 안과 다카마쓰항 중 어디가 좋을까 — 발행 완료 (`draft: false`, `naoshima-stay-island-vs-takamatsu.mdx`)
 3. 가고시마항에서 야쿠시마 가는 법: 이른 배를 위한 전날 숙소
 4. 모지코와 시모노세키 배 이동: 고쿠라·모지코 숙박 비교
 
