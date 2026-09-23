@@ -53,16 +53,16 @@ src/assets/images/posts/{category}/{post-slug}/
 ### 1. 공항에서 숙소까지
 
 1. 마쓰야마공항에서 도고온천 가는 법과 숙소 위치 선택 — 발행 완료 (`draft: false`)
-2. 기타큐슈공항에서 고쿠라역 가는 법: 늦은 도착 숙소는 어디가 편할까 — 초안 작성 완료, 검토 대기 (`draft: true`, `kitakyushu-airport-to-kokura-stay.mdx`)
-3. 다카마쓰공항에서 다카마쓰역·항구 이동: 나오시마 전날 숙소 위치 — 초안 작성 완료, 검토 대기 (`draft: true`, `takamatsu-airport-to-port-naoshima-stay.mdx`)
-4. 사가공항에서 사가역·우레시노온천 이동: 당일 이동과 1박 비교 — 초안 작성 완료, 검토 대기 (`draft: true`, `saga-airport-to-station-ureshino-stay.mdx`; 우레시노온천 환승 구간은 출처 간 요금이 맞지 않아 단일 금액을 단정하지 않음 — 검토 시 확인 요망)
+2. 기타큐슈공항에서 고쿠라역 가는 법: 늦은 도착 숙소는 어디가 편할까 — 발행 완료 (`draft: false`, `kitakyushu-airport-to-kokura-stay.mdx`)
+3. 다카마쓰공항에서 다카마쓰역·항구 이동: 나오시마 전날 숙소 위치 — 발행 완료 (`draft: false`, `takamatsu-airport-to-port-naoshima-stay.mdx`)
+4. 사가공항에서 사가역·우레시노온천 이동: 당일 이동과 1박 비교 — 발행 완료 (`draft: false`, `saga-airport-to-station-ureshino-stay.mdx`; 우레시노온천 환승 구간은 출처 간 요금이 맞지 않아 단일 금액을 단정하지 않음)
 
 ### 2. 렌터카 없는 소도시
 
 1. 구마모토에서 아소산 차 없이 가는 법: 버스·투어와 1박 거점 비교 — 보류. 2026-08-14 화산경보 레벨3로 화구 반경 2km 규제·화구 셔틀버스 운행중단·아소산조터미널 일시폐쇄 이력 확인됨. 현재 규제 상태를 당일 [아소화산방재협의회](https://www.aso-volcano.jp/) 또는 [산코버스 화산규제 정보](https://www.sankobus.jp/site/aso/kisei/)에서 재확인한 뒤 작성할 것
 2. 하카타에서 우레시노온천 대중교통 이동: 다케오온센 환승과 숙소 위치
 3. 요나고공항에서 마쓰에 차 없이 이동: 첫날 숙박 거점 선택
-4. 오이타공항에서 벳푸 이동: 공항버스 정류장별 숙소 권역 — 초안 작성 완료, 검토 대기 (`draft: true`, `oita-airport-to-beppu-stay.mdx`)
+4. 오이타공항에서 벳푸 이동: 공항버스 정류장별 숙소 권역 — 발행 완료 (`draft: false`, `oita-airport-to-beppu-stay.mdx`)
 
 ### 3. 섬·항구 환승
 
