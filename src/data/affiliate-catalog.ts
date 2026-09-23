@@ -10,11 +10,14 @@ export type Product = {
   decisionReason: string;
 };
 
+export type AffiliateNetwork =
+  "coupang-partners" | "expedia" | "direct" | "other";
+
 export type Offer = {
   linkKey: string;
   productKey: string;
   seller: string;
-  affiliateNetwork?: string;
+  affiliateNetwork?: AffiliateNetwork;
   url: string;
   status: "active" | "planned" | "expired";
   commissioned: boolean;
