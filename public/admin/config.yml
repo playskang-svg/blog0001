@@ -53,6 +53,13 @@ collections:
       - label: "발행일"
         name: "pubDatetime"
         widget: "datetime"
+      - label: "대표 이미지 (파일 업로드)"
+        name: "ogImage"
+        widget: "image"
+        required: false
+        media_folder: "/src/assets/images/posts/{{fields.category}}/{{fields.slug}}"
+        public_folder: "/src/assets/images/posts/{{fields.category}}/{{fields.slug}}"
+        hint: "⚠️ webp 파일만 올리세요. CMS는 파일 형식을 강제로 막지 못합니다 — jpg/png를 올리면 저장은 되지만 npm run build(content:validate)가 실패해서 사이트에 반영 안 됩니다. 업로드 전에 webp로 변환해서 올리세요."
 
       # --- 본문 에디터 ---
       - label: "본문"
@@ -111,13 +118,6 @@ collections:
         widget: "list"
         default: ["others"]
         required: false
-      - label: "대표 이미지 / ogImage"
-        name: "ogImage"
-        widget: "image"
-        required: false
-        media_folder: "/src/assets/images/posts/{{fields.category}}/{{fields.slug}}"
-        public_folder: "/src/assets/images/posts/{{fields.category}}/{{fields.slug}}"
-        hint: "⚠️ webp 파일만 올리세요. CMS는 파일 형식을 강제로 막지 못합니다 — jpg/png를 올리면 저장은 되지만 npm run build(content:validate)가 실패해서 사이트에 반영 안 됩니다. 업로드 전에 webp로 변환해서 올리세요."
       - label: "캐노니컬 URL"
         name: "canonicalURL"
         widget: "string"
