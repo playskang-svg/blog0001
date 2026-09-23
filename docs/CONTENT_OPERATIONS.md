@@ -59,7 +59,7 @@ src/assets/images/posts/{category}/{post-slug}/
 
 ### 2. 렌터카 없는 소도시
 
-1. 구마모토에서 아소산 차 없이 가는 법: 버스·투어와 1박 거점 비교 — 보류. 2026-08-14 화산경보 레벨3로 화구 반경 2km 규제·화구 셔틀버스 운행중단·아소산조터미널 일시폐쇄 이력 확인됨. 현재 규제 상태를 당일 [아소화산방재협의회](https://www.aso-volcano.jp/) 또는 [산코버스 화산규제 정보](https://www.sankobus.jp/site/aso/kisei/)에서 재확인한 뒤 작성할 것
+1. 구마모토에서 아소산 차 없이 가는 법: 버스·투어와 1박 거점 비교 — 발행 완료 (`draft: false`, `kumamoto-to-aso-no-car-stay.mdx`). 2026-09-01 화산경보 레벨3→2 하향, 9-18 발표까지 레벨2 유지 확인 후 작성. 화구 반경 1km는 여전히 규제 중이므로 본문에 "방문 당일 재확인" 안내를 고정 삽입함
 2. 하카타에서 우레시노온천 대중교통 이동: 다케오온센 환승과 숙소 위치 — 발행 완료 (`draft: false`, `hakata-to-ureshino-onsen-stay.mdx`; 운임은 2022년 니시큐슈신칸센 개통 당시 JR규슈 인가 기준이라 최신 확인 권장 문구 포함)
 3. 요나고공항에서 마쓰에 차 없이 이동: 첫날 숙박 거점 선택 — 발행 완료 (`draft: false`, `yonago-airport-to-matsue-stay.mdx`)
 4. 오이타공항에서 벳푸 이동: 공항버스 정류장별 숙소 권역 — 발행 완료 (`draft: false`, `oita-airport-to-beppu-stay.mdx`)
@@ -87,7 +87,7 @@ src/assets/images/posts/{category}/{post-slug}/
 3. 나오시마 첫 배 타는 날: 다카마쓰항 도보권 숙소 선택 — 발행 완료 (`draft: false`, `naoshima-first-boat-day-checklist.mdx`)
 4. 야쿠시마 배가 이른 날: 가고시마항 전날 숙소 체크리스트 — 발행 완료 (`draft: false`, `yakushima-early-boat-checklist.mdx`)
 
-카테고리 5 완료. 전체 발행 대기열 20건 중 19건 발행, 1건(구마모토→아소산) 화산 규제 재확인 대기.
+전체 발행 대기열 20건 중 20건 발행 완료(2026-09-23). 신규 배치는 딥링크 등록 또는 다음 키워드 라운드 논의 후 진행.
 
 ## 지역 우선순위 근거
 
