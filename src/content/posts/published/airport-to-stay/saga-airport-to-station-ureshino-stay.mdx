@@ -10,10 +10,21 @@ travelerTypes: ["사가·우레시노 초행자", "대중교통 여행자", "온
 decision: "우레시노온천까지 직행 교통편이 없으므로 도착 시각과 짐 상태를 보고 당일 이동과 사가역 1박 중 하나를 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/airport-to-stay/saga-airport-to-station-ureshino-stay/hero.webp
 tags: ["사가공항", "사가역", "우레시노온천", "공항버스"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/airport-to-stay/saga-airport-to-station-ureshino-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="숲으로 둘러싸인 일본 시골 온천 마을 풍경"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 사가공항(규슈사가국제공항)에서 **사가역까지는 직행 액세스버스**로 바로 갈 수 있습니다. 하지만 **우레시노온천까지 가는 직행 대중교통은 없고**, 사가역에서 열차나 버스로 한 번 더 갈아타야 합니다. 이 차이 때문에 도착 시각에 따라 당일에 우레시노온천까지 들어갈지, 사가역 근처에서 하루 묵고 다음 날 이동할지가 갈립니다.
 

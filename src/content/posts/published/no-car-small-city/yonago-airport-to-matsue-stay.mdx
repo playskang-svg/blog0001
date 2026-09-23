@@ -10,10 +10,21 @@ travelerTypes: ["마쓰에·이즈모 초행자", "대중교통 여행자", "렌
 decision: "요나고공항 도착 시각과 다음 날 근교 일정에 맞춰 마쓰에역 주변 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/no-car-small-city/yonago-airport-to-matsue-stay/hero.webp
 tags: ["요나고공항", "마쓰에역", "공항연락버스", "신지호"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/no-car-small-city/yonago-airport-to-matsue-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="나무로 둘러싸인 잔잔한 호수 풍경"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 요나고공항(요나고키타로공항)에서 마쓰에까지는 렌터카 없이도 **공항연락버스**로 환승 없이 이동할 수 있습니다. 마쓰에일방교통과 히노마루하이야가 공동 운행하며, 항공편 도착에 맞춰 배차되므로 도착 당일 시간표를 크게 걱정하지 않아도 됩니다.
 

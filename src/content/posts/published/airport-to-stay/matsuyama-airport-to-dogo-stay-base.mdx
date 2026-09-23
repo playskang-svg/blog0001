@@ -11,10 +11,21 @@ travelerTypes: ["마쓰야마 초행자", "대중교통 여행자", "짐이 있�
 decision: "마쓰야마공항 도착 시각과 다음 날 일정에 맞춰 하차 정류장과 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-22
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/airport-to-stay/matsuyama-airport-to-dogo-stay-base/hero.webp
 tags: ["마쓰야마공항", "도고온천", "공항버스", "숙소 위치"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/airport-to-stay/matsuyama-airport-to-dogo-stay-base/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="일본 전통 온천 거리의 목조 건물"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 마쓰야마공항에서 도고온천까지는 **환승 없는 공항 리무진버스**를 이용할 수 있습니다. 다만 무조건 도고온천까지 갈 필요는 없습니다. 다음 날 JR 열차를 탈 예정이면 JR마쓰야마역, 시내 교통을 이어 탈 예정이면 마쓰야마시역, 온천 일정이 중심이면 도고온천역 앞에 내리는 편이 동선을 줄이기 쉽습니다.
 

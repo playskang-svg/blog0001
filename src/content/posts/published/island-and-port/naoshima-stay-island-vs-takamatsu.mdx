@@ -10,10 +10,21 @@ travelerTypes: ["나오시마 방문 예정자", "미술관 순례 여행자", "
 decision: "미술관 관람 일정과 막배 시각을 기준으로 나오시마 섬 안 숙박과 다카마쓰항 숙박 중 하나를 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/island-and-port/naoshima-stay-island-vs-takamatsu/hero.webp
 tags: ["나오시마", "지추미술관", "다카마쓰항", "미야노우라"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/island-and-port/naoshima-stay-island-vs-takamatsu/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="세토내해에 떠 있는 원뿔형 섬과 잔잔한 바다"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 나오시마 여행을 계획할 때 가장 먼저 부딪히는 고민이 "섬 안에서 잘까, 다카마쓰에서 묵으며 다녀올까"입니다. 다카마쓰항에서 나오시마까지 가는 법은 [이전 글](/posts/takamatsu-port-to-naoshima-stay/)에서 다뤘으니, 이 글에서는 **숙박 위치를 정하는 기준**에 집중합니다.
 

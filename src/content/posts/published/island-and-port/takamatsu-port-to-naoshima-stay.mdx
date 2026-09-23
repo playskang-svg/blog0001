@@ -10,10 +10,21 @@ travelerTypes: ["나오시마 방문 예정자", "미술관 순례 여행자", "
 decision: "그날 첫 배 시각과 항공·열차 도착 시각을 비교해 다카마쓰항 전날 숙박이 필요한지 판단합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/island-and-port/takamatsu-port-to-naoshima-stay/hero.webp
 tags: ["다카마쓰항", "나오시마", "미야노우라항", "페리"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/island-and-port/takamatsu-port-to-naoshima-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="일본어 표지판이 있는 페리 승선장 입구"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 다카마쓰항에서 나오시마 미야노우라항까지는 시코쿠기센(四国汽船)이 운항하는 **일반 페리**와 **고속여객선** 두 종류로 이동할 수 있습니다. 나오시마는 미술관 예약과 첫 배 시각이 하루 일정을 좌우하는 섬이라, 숙소보다 **그날의 첫 배 시각**을 먼저 확인하는 편이 실수를 줄입니다.
 

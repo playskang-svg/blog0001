@@ -10,10 +10,21 @@ travelerTypes: ["야쿠시마 방문 예정자", "트레킹 여행자", "대중�
 decision: "고속선과 페리 중 소요시간·운임을 비교해 배편을 정하고, 다음 날 일정에 맞춰 가고시마항 전날 숙박 여부를 판단합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/island-and-port/kagoshima-port-to-yakushima-stay/hero.webp
 tags: ["가고시마항", "야쿠시마", "고속선", "조몬스기"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/island-and-port/kagoshima-port-to-yakushima-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="야쿠시마 시라타니운스이쿄 숲길의 쓰러진 나무"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 가고시마항에서 야쿠시마까지는 **고속선(토피&로켓)**과 **페리(야쿠시마2)** 두 가지 방법으로 이동할 수 있습니다. 두 배편의 속도와 요금 차이가 크고, 야쿠시마 도착 후 조몬스기 트레킹처럼 새벽 일찍 움직여야 하는 일정이 있다면 가고시마항 전날 숙박도 고려할 만합니다.
 

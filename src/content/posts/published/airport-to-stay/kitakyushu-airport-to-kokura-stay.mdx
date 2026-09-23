@@ -10,10 +10,21 @@ travelerTypes: ["기타큐슈 초행자", "대중교통 여행자", "늦은 항�
 decision: "고쿠라역행 버스의 운임·소요시간과 항공편 도착 시각을 함께 보고 고쿠라역 주변과 공항 인근 숙박 중에서 선택합니다."
 sourceCheckedAt: 2026-09-23
 affiliatePlacements: []
+ogImage: ../../../../assets/images/posts/airport-to-stay/kitakyushu-airport-to-kokura-stay/hero.webp
 tags: ["기타큐슈공항", "고쿠라역", "공항버스", "숙소 위치"]
 ---
 
+import { Image } from "astro:assets";
+import hero from "@/assets/images/posts/airport-to-stay/kitakyushu-airport-to-kokura-stay/hero.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+
+<Image
+  src={hero}
+  alt="일본 기차역 야간 승강장에 들어오는 열차"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  loading="eager"
+/>
 
 기타큐슈공항에서 고쿠라역까지는 니시테쓰버스가 운행하는 **공항버스** 한 종류로 이동할 수 있습니다. 다만 같은 버스라도 나카다니를 경유하는지에 따라 소요시간이 크게 달라지므로, 표를 보지 않고 아무 버스나 타면 늦은 도착일 때 체크인 시각이 빠듯해질 수 있습니다.
 
