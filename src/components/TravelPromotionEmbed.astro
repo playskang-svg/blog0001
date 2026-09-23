@@ -1,5 +1,5 @@
 ---
-import { resolvePlacement } from "@/data/affiliate-catalog";
+import { resolvePlacement, offerUrl as resolveOfferUrl } from "@/data/affiliate-catalog";
 
 type Props = {
   placementKey?: string;
@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 
 const resolved = resolvePlacement(placementKey);
-const offerUrl = resolved?.offer?.url;
+const offerUrl = resolved?.offer ? resolveOfferUrl(resolved.offer) : undefined;
 const canEmbed = Boolean(
   offerUrl && new URL(offerUrl).hostname === "travelpromotion.tipspedia.kr"
 );

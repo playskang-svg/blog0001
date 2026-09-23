@@ -1,5 +1,5 @@
 ---
-import { resolvePlacement, type ProductKind } from "@/data/affiliate-catalog";
+import { resolvePlacement, offerUrl, type ProductKind } from "@/data/affiliate-catalog";
 
 type Props = {
   placementKeys: string[];
@@ -58,7 +58,7 @@ const resolvedItems = placementKeys
                 </p>
                 {item.offer && (
                   <a
-                    href={item.offer.url}
+                    href={offerUrl(item.offer)}
                     target="_blank"
                     rel={
                       item.offer.commissioned

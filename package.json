@@ -6,8 +6,9 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "npm run content:validate && astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "dev": "npm run sync:affiliate && astro dev",
+    "build": "npm run sync:affiliate && npm run content:validate && astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "sync:affiliate": "node scripts/sync-affiliate-links.mjs",
     "content:validate": "node scripts/validate-content.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
