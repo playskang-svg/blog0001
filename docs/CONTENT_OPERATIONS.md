@@ -73,10 +73,10 @@ src/assets/images/posts/{category}/{post-slug}/
 
 ### 4. 관광지 가까운 숙소거점
 
-1. 마쓰야마 숙소는 도고온천과 JR마쓰야마역 중 어디가 편할까
-2. 기타큐슈 숙소는 고쿠라와 모지코 중 어디에 잡아야 할까
-3. 다카마쓰 숙소는 다카마쓰역·항구와 가와라마치 중 어디가 좋을까
-4. 구마모토 숙소는 구마모토역과 사쿠라마치 중 어디가 편할까
+1. 마쓰야마 숙소는 도고온천과 JR마쓰야마역 중 어디가 편할까 — 발행 완료 (`draft: false`, `matsuyama-dogo-vs-jr-station-stay.mdx`)
+2. 기타큐슈 숙소는 고쿠라와 모지코 중 어디에 잡아야 할까 — 발행 완료 (`draft: false`, `kitakyushu-kokura-vs-mojiko-stay.mdx`)
+3. 다카마쓰 숙소는 다카마쓰역·항구와 가와라마치 중 어디가 좋을까 — 발행 완료 (`draft: false`, `takamatsu-station-port-vs-kawaramachi-stay.mdx`)
+4. 구마모토 숙소는 구마모토역과 사쿠라마치 중 어디가 편할까 — 발행 완료 (`draft: false`, `kumamoto-station-vs-sakuramachi-stay.mdx`)
 
 ### 5. 늦은 도착·이른 출발
 
