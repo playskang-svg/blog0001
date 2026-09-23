@@ -61,7 +61,7 @@
         ① 양식 받기
         <a href="/templates/travel-guide-template.mdx" download>기본 양식</a> ·
         <a href="/templates/blank-post-template.mdx" download>빈 양식</a>
-        → ② 로컬 에디터로 작성 → ③ 여기로 업로드
+        → ② 로컬 에디터로 작성 → ③ 여기로 업로드하면 바로 발행
       </span>
       <button type="button" id="upload-btn">글 파일 업로드</button>
       <input
@@ -77,9 +77,11 @@
     <script>
       // 작성한 글 파일(.mdx)과 그 글에 쓰는 이미지를 저장소의 정해진 위치로
       // 바로 커밋한다. 경로는 파일명(=슬러그)과 frontmatter의 category로 정해진다.
+      // 올린 글은 곧바로 공개되도록 draft·발행일을 맞춰서 커밋한다.
       (function () {
         const REPO = "playskang-svg/blog0001";
         const BRANCH = "main";
+        const SITE = "https://blog.tipspedia.kr";
         const POSTS_DIR = "src/content/posts/published";
         const IMAGES_DIR = "src/assets/images/posts";
         const CATEGORIES = [
@@ -95,7 +97,6 @@
           "category",
           "region",
           "decision",
-          "pubDatetime",
         ];
         const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
         const POST_EXTENSION = /\.(mdx|md)$/i;
@@ -118,10 +119,18 @@
           window.addEventListener("resize", syncBarHeight);
         }
 
-        function say(message, ok) {
+        function say(message, ok, href) {
           statusLine.textContent = message;
           statusLine.style.color =
             ok === undefined ? "#e5e7eb" : ok ? "#86efac" : "#fca5a5";
+          if (href) {
+            const link = document.createElement("a");
+            link.href = href;
+            link.target = "_blank";
+            link.rel = "noopener";
+            link.textContent = href;
+            statusLine.append(" ", link);
+          }
         }
 
         function authToken() {
@@ -147,6 +156,41 @@
             }
           }
           return fields;
+        }
+
+        function kstTimestamp() {
+          const shifted = new Date(Date.now() + 9 * 60 * 60 * 1000);
+          return shifted.toISOString().replace(/\.\d+Z$/, "+09:00");
+        }
+
+        // draft가 켜져 있거나 발행일이 미래면 사이트에 안 뜬다. 지금 공개되도록 맞춘다.
+        function makeLive(text, fields) {
+          const parts = text.match(/^(---\r?\n)([\s\S]*?)(\r?\n---)/);
+          let front = parts[2];
+          const applied = [];
+
+          if (fields.draft !== "false") {
+            front = /^draft:/m.test(front)
+              ? front.replace(/^draft:.*$/m, "draft: false")
+              : front + "\ndraft: false";
+            applied.push("draft: false");
+          }
+
+          const pubAt = fields.pubDatetime
+            ? new Date(fields.pubDatetime).getTime()
+            : NaN;
+          if (isNaN(pubAt) || pubAt > Date.now()) {
+            const stamp = kstTimestamp();
+            front = /^pubDatetime:/m.test(front)
+              ? front.replace(/^pubDatetime:.*$/m, "pubDatetime: " + stamp)
+              : front + "\npubDatetime: " + stamp;
+            applied.push("pubDatetime: " + stamp);
+          }
+
+          return {
+            text: parts[1] + front + parts[3] + text.slice(parts[0].length),
+            applied,
+          };
         }
 
         function toBase64(bytes) {
@@ -225,11 +269,20 @@
           const postPath =
             POSTS_DIR + "/" + fields.category + "/" + slug + ".mdx";
           const imageDir = IMAGES_DIR + "/" + fields.category + "/" + slug;
-          const plan = [postPath].concat(
-            images.map(image => imageDir + "/" + image.name)
-          );
+          const liveUrl = SITE + "/posts/" + slug + "/";
+          const live = makeLive(text, fields);
+          const plan = [postPath]
+            .concat(images.map(image => imageDir + "/" + image.name))
+            .concat(
+              live.applied.length
+                ? ["", "발행 설정: " + live.applied.join(", ")]
+                : []
+            )
+            .concat(["", "공개 주소: " + liveUrl]);
           if (
-            !confirm(plan.join("\n") + "\n\n위 위치로 올립니다. 진행할까요?")
+            !confirm(
+              plan.join("\n") + "\n\n올리면 바로 발행됩니다. 진행할까요?"
+            )
           ) {
             return say("");
           }
@@ -247,17 +300,15 @@
           say("글 업로드 중…");
           const updated = await commitFile(
             postPath,
-            toBase64(new TextEncoder().encode(text)),
-            (fields.draft === "true" ? "draft: " : "post: ") + fields.title
+            toBase64(new TextEncoder().encode(live.text)),
+            "post: " + fields.title
           );
 
           say(
-            (updated ? "수정 완료 — " : "등록 완료 — ") +
-              postPath +
-              (fields.draft === "true"
-                ? " · draft: true 라서 사이트에는 아직 안 보입니다."
-                : " · 1~2분 뒤 사이트에 반영됩니다."),
-            true
+            (updated ? "수정 발행 완료" : "발행 완료") +
+              " · 1~2분 뒤 아래 주소에 뜹니다 —",
+            true,
+            liveUrl
           );
         }
 
