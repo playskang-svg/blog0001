@@ -32,6 +32,8 @@ src/content/posts/published/
 - 일반 글: `.md`
 - `TravelPromotionEmbed`, `StayRecommendations`, Astro 이미지 컴포넌트를 쓰는 글: `.mdx`
 - 기본 템플릿: `src/content/templates/travel-guide-template.mdx`
+- 관리자 화면(`/admin`) 상단의 "글 파일 업로드" 버튼에 작성한 `.mdx`와 그 글의 이미지를 함께 넣으면
+  `category`(frontmatter)와 파일명을 읽어 위 폴더와 `src/assets/images/posts/{category}/{slug}/`로 바로 커밋한다
 - 폴더는 편집용 분류이며 공개 URL은 `/posts/{파일명}/` 형식으로 유지한다.
 - 카테고리 노출은 파일 위치가 아니라 frontmatter의 `category` 값으로 결정한다.
 
