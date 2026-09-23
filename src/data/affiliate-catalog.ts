@@ -106,7 +106,9 @@ function getCentralLink(key: string): CentralLink {
   const link = centralLinks.find(l => l.key === key);
   if (!link) throw new Error(`[affiliate] unknown central link_key: ${key}`);
   if (link.status === "retired") {
-    throw new Error(`[affiliate] retired central link_key: ${key} (${link.issue ?? "사용 중단"})`);
+    throw new Error(
+      `[affiliate] retired central link_key: ${key} (${link.issue ?? "사용 중단"})`
+    );
   }
   return link;
 }
