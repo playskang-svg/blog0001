@@ -1,7 +1,12 @@
 import type { ResolvedAstroPaperConfig } from "@/types/config";
 import { getAssetPath } from "./withBase";
 
-const publicFiles = import.meta.glob("/public/*", { eager: false });
+// 이미지 확장자로 좁힌다 — "/public/*" 전체를 잡으면 확장자 없는 _headers·_redirects(Workers 설정)나
+// ads.txt까지 JS 모듈로 파싱하려다 빌드가 깨진다.
+const publicFiles = import.meta.glob(
+  "/public/*.{png,jpg,jpeg,webp,avif,gif,svg}",
+  { eager: false }
+);
 
 function existsInPublic(filename: string): boolean {
   return `/public/${filename}` in publicFiles;

@@ -1,0 +1,17 @@
+// dist/(Astro 정적 빌드)를 Workers 정적 에셋으로만 서빙한다 — Worker 스크립트 없음.
+// 헤더·리다이렉트는 public/_headers·public/_redirects(빌드 때 dist/로 복사됨)가 맡는다.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hub-tipspedia",
+  "compatibility_date": "2026-09-01",
+  // workers.dev 주소가 색인되면 정본과 중복 문서가 된다 — 커스텀 도메인만 연다.
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "hub.tipspedia.kr", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist",
+    // 내부 주소는 전부 끝에 `/`가 붙는다(cleanUrls + trailingSlash: true와 같은 동작).
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

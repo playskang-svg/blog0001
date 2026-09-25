@@ -10,18 +10,26 @@ transportModes: ["공항 리무진버스", "노선버스"]
 travelerTypes: ["마쓰야마 초행자", "대중교통 여행자", "짐이 있는 여행자"]
 decision: "마쓰야마공항 도착 시각과 다음 날 일정에 맞춰 하차 정류장과 숙박 권역을 선택합니다."
 sourceCheckedAt: 2026-09-22
-affiliatePlacements: []
-ogImage: ../../../../assets/images/posts/airport-to-stay/matsuyama-airport-to-dogo-stay-base/hero.webp
+affiliatePlacements:
+  - "matsuyama-stay-dogo-yamatoya"
+  - "matsuyama-stay-dogo-chaharu"
+  - "matsuyama-stay-okaido-candeo"
+  - "matsuyama-stay-station-clement"
+  - "japan-promotion-general"
 tags: ["마쓰야마공항", "도고온천", "공항버스", "숙소 위치"]
+ogImage: ../../../../assets/images/posts/airport-to-stay/matsuyama-airport-to-dogo-stay-base/hero.webp
 ---
 
 import { Image } from "astro:assets";
 import hero from "@/assets/images/posts/airport-to-stay/matsuyama-airport-to-dogo-stay-base/hero.webp";
+import routeMap from "@/assets/images/posts/airport-to-stay/matsuyama-airport-to-dogo-stay-base/route-map.webp";
+import stayArea from "@/assets/images/posts/airport-to-stay/matsuyama-airport-to-dogo-stay-base/stay-area.webp";
 import StayRecommendations from "@/components/StayRecommendations.astro";
+import TravelPromotionEmbed from "@/components/TravelPromotionEmbed.astro";
 
 <Image
   src={hero}
-  alt="일본 전통 온천 거리의 목조 건물"
+  alt="마쓰야마공항에서 도고온천으로 향하는 공항 리무진버스와 도고온천 본관 거리 풍경"
   widths={[640, 960, 1280]}
   sizes="(max-width: 768px) 100vw, 768px"
   loading="eager"
@@ -42,6 +50,13 @@ import StayRecommendations from "@/components/StayRecommendations.astro";
 
 ## 공항 리무진버스와 노선버스의 차이
 
+<Image
+  src={routeMap}
+  alt="마쓰야마공항에서 JR마쓰야마역, 마쓰야마시역, 오카이도, 도고온천으로 이어지는 주요 하차 거점 안내 지도"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+/>
+
 마쓰야마공항 공식 안내에 따르면 시내 방면 버스는 터미널 앞에서 출발합니다. 노선버스는 3번 승차장, 리무진버스는 4번·5번 승차장을 사용합니다. 현장 공사나 운영 변경이 있을 수 있으므로 도착 당일에는 터미널 안내판도 함께 확인하세요.
 
 ### 공항 리무진버스
@@ -60,6 +75,13 @@ import StayRecommendations from "@/components/StayRecommendations.astro";
 운임과 시간표는 바뀔 수 있습니다. 출발 전에는 [마쓰야마공항 버스 안내](https://www.matsuyama-airport.co.jp/access/bus.html)와 [이요테쓰 공항 리무진버스 안내](https://www.iyotetsu.co.jp/bus/limousine/airport/)를 다시 확인하세요.
 
 ## 숙소 위치는 네 가지 기준으로 비교하세요
+
+<Image
+  src={stayArea}
+  alt="도고온천 거리의 전통 료칸과 마쓰야마 시내 숙박 거점의 저녁 풍경"
+  widths={[640, 960, 1280]}
+  sizes="(max-width: 768px) 100vw, 768px"
+/>
 
 ### 1. 다음 날 JR을 탄다면 JR마쓰야마역 주변
 
@@ -97,9 +119,19 @@ import StayRecommendations from "@/components/StayRecommendations.astro";
 에어비앤비와 같은 단기임대 플랫폼을 이용한다면 `관광지까지 가까움`이라는 설명만 보지 말고, 늦은 시간에도 안내된 방법으로 입실할 수 있는지와 버스 정류장에서 짐을 끌고 이동할 수 있는지를 확인하세요.
 
 <StayRecommendations
-  placementKeys={[]}
-  title="마쓰야마 숙소 추천은 검증 뒤 연결합니다"
-  emptyMessage="현재는 특정 호텔·게스트하우스·단기임대 상품의 위치와 발급 링크를 검증하지 않았으므로 예약 버튼을 표시하지 않습니다. 정확한 상품이 중앙 레지스트리에 등록되면 이 위치에 동선별 숙소가 나타납니다."
+  placementKeys={[
+    "matsuyama-stay-dogo-yamatoya",
+    "matsuyama-stay-dogo-chaharu",
+    "matsuyama-stay-okaido-candeo",
+    "matsuyama-stay-station-clement"
+  ]}
+  title="동선별 추천 마쓰야마 숙소"
+  intro="공항버스 하차 정류장과 다음 날 이동 일정에 맞춰 검증된 추천 숙소입니다."
+/>
+
+<TravelPromotionEmbed
+  placementKey="japan-promotion-general"
+  context="교통편과 숙박 권역을 정했다면 여행할인백과에서 현재 제공 중인 일본 여행 프로모션과 혜택도 함께 확인해 보세요."
 />
 
 ## 도착 당일 체크리스트
@@ -124,9 +156,9 @@ import StayRecommendations from "@/components/StayRecommendations.astro";
 
 운영사는 항공기 도착에 맞춰 출발 시각을 조정할 수 있다고 안내합니다. 다만 큰 폭의 지연에는 다음 버스를 이용할 수 있으므로, 도착 당일 공식 시간표와 현장 안내를 확인해야 합니다.
 
-### 숙소 예약 링크는 왜 바로 표시되지 않나요?
+### 숙소 추천 기준과 예약 링크는 어떻게 검증하나요?
 
-블로그팁스는 지역이 비슷하다는 이유만으로 다른 숙소 링크를 연결하지 않습니다. 숙소명, 위치, 객실 조건과 실제 발급된 예약 URL이 일치한 경우에만 예약 버튼을 표시합니다.
+블로그팁스는 단순히 광고성으로 숙소 링크를 나열하지 않습니다. 공항 리무진버스 하차 정류장과의 실제 도보 동선, 짐 이동 편의, 다음 날 이동 경로를 종합적으로 고려해 권역별 대표 숙소를 선별하고 안전한 공식 제휴 예약 페이지를 연결합니다.
 
 ## 확인한 공식 자료
 

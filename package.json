@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run content:validate && astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "build": "npm run content:validate && astro check && astro build && pagefind --site dist && node -e \"const fs = require('fs'); fs.cpSync('dist/pagefind', 'public/pagefind', {recursive: true});\"",
     "content:validate": "node scripts/validate-content.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
@@ -46,7 +46,8 @@
     "prettier": "3.9.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.137.0"
   },
   "allowScripts": {
     "esbuild": true

@@ -1,22 +1,18 @@
+# AGENTS.md
+
+자세한 프로젝트 구조 및 운영 지침은 [CLAUDE.md](CLAUDE.md)를 참고하세요.
+
 ## Development
 
-When starting the dev server, use background mode:
+개발 서버를 백그라운드로 실행할 때:
 
+```bash
+npx astro dev
 ```
-astro dev --background
+
+배포:
+
+```bash
+npm run build
+npx wrangler deploy
 ```
-
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
-
-## Documentation
-
-Full documentation: https://docs.astro.build
-
-Consult these guides before working on related tasks:
-
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)

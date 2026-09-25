@@ -2,12 +2,12 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://blog.tipspedia.kr/",
+    url: "https://hub.tipspedia.kr/",
     title: "여행팁블로그",
     description:
       "교통부터 숙박 거점까지 이어지는 일본 소도시 실전 여행 팁을 전합니다.",
     author: "여행팁블로그 편집팀",
-    profile: "https://blog.tipspedia.kr/about/",
+    profile: "https://hub.tipspedia.kr/about/",
     ogImage: "default-og.webp",
     lang: "ko",
     timezone: "Asia/Seoul",
